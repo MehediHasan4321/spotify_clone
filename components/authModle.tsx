@@ -28,7 +28,7 @@ const AuthModle = ()=>{
 
 
     return(
-        <Model title="Test Titla" description="Test description" isOpen={isOpen} onClose={onClose} handleChange={onChange}>
+        <Model title="Welcome Back" description="Provide Your Right Iniformation" isOpen={isOpen} onClose={onClose} handleChange={onChange}>
             <Auth supabaseClient={supabaseClient} appearance={{
                 theme:ThemeSupa,
                 variables:{

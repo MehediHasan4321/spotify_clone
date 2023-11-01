@@ -10,6 +10,7 @@ import useAuthModel from '@/hooks/useAuthModel';
 import { useSupabaseClient } from '@supabase/auth-helpers-react';
 import { useUser } from '@/hooks/useUser';
 import { FaUserAlt } from 'react-icons/fa';
+import toast from 'react-hot-toast/headless';
 
 
 interface HeaderProps {
@@ -30,8 +31,10 @@ const Header: React.FC<HeaderProps> = ({ children, className }) => {
         router.refresh()
 
         if (error) {
-            console.log(error.message);
+            toast.error(error.message)
 
+        }else{
+            toast.success('Logout Success')
         }
 
     }
