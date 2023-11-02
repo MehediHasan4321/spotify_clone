@@ -4,9 +4,14 @@ import { AiOutlinePlus } from 'react-icons/ai'
 import useAuthModel from '@/hooks/useAuthModel';
 import { useUser } from '@/hooks/useUser';
 import useUploadModel from '@/hooks/useUploadModel';
+import { Song } from '@/tpyes';
+import MediaItem from './MediaItem';
 
+interface Laibraryprops {
+    songs:Song[]
+}
 
-const Library = () => {
+const Library:React.FC<Laibraryprops> = ({songs}) => {
 
     const authModle = useAuthModel()
     const uploadModel = useUploadModel()
@@ -34,7 +39,9 @@ const Library = () => {
                 <AiOutlinePlus onClick={onClick} size={20} className='text-neutral-400 cursor-pointer hover:text-white transition' />
             </div>
             <div className='flex flex-col gap-y-2 mt-4 px-3'>
-                List of Songs!
+                {
+                    songs.map(item=><MediaItem key={item.id} onClick={()=>{}} data={item} />)
+                }
             </div>
         </div>
     );

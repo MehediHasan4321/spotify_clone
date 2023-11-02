@@ -34,6 +34,7 @@ const UploadModel = () => {
     }
 
     const onSubmit: SubmitHandler<FieldValues> = async (values) => {
+        
         try {
             setIsLoading(true)
             const imageFile = values?.image?.[0]
@@ -142,7 +143,7 @@ const UploadModel = () => {
                     {...register('image', { required: true })}
 
                 />
-                <Button disabled={isLoading} type="submit">Create</Button>
+                <Button disabled={isLoading} type="submit">{isLoading?'Creating....':'Create'}</Button>
             </form>
 
         </Model>

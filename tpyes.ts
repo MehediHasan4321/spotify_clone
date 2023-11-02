@@ -12,6 +12,15 @@ export interface UserDetails {
     paymet_method?:Stripe.PaymentMethod[Stripe.PaymentMethod.Type]
 }
 
+export interface Song {
+    id:string
+    user_id:string,
+    author:string,
+    title:string,
+    song_path:string
+    image_path:string
+}
+
 export interface Products{
     id:string
     active?:boolean
