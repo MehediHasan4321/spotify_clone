@@ -20,7 +20,7 @@ const MediaItem:React.FC<MediaItemProps> = ({data,onClick}) => {
        //TODO:Default trun on Playeer
     }
 
-    console.log(imageUrl)
+   
 
     return (
         <div className='flex items-center gap-x-4 cursor-pointer hover:bg-neutral-800/50 w-full p-2 rounded-md '>
