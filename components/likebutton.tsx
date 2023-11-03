@@ -73,7 +73,7 @@ const LikeButton: React.FC<LikeButtonProps> = ({ songId }) => {
             
         }
         
-       //router.refresh()
+       router.refresh()
     }
 
     
