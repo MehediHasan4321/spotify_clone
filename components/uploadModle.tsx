@@ -41,7 +41,7 @@ const UploadModel = () => {
             const songFile = values?.song?.[0]
             const uniqueID = uniqid()
 
-            console.log('image value',imageFile)
+            
 
             if(!imageFile || !songFile || !user){
                 toast.error('Missing Error')

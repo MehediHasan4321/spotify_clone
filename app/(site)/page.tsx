@@ -2,6 +2,7 @@ import getSong from "@/actions/getSong";
 import Header from "@/components/Header";
 import ListItems from "@/components/ListItems";
 import PageContent from "./components/PageContent";
+import Box from "@/components/Box";
 export const revalidate = 0
 export default async function Home() {
 
@@ -19,16 +20,15 @@ export default async function Home() {
           </div>
         </div>
       </Header>
-      <div className="mt-3 mb-7 px-6">
+      <div className="mt-3 mb-7 px-6 overflow-y-auto h-full">
         <div className="flex justify-between items-center">
           <h1 className="text-2xl font-semibold text-white">
             Newst Song
           </h1>
-
         </div>
-        <div>
+        <Box className="mb-[250px]">
           <PageContent songs={songs}/>
-        </div>
+        </Box>
       </div>
     </div>
   )

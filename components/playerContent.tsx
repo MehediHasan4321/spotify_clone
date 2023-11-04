@@ -20,7 +20,7 @@ interface PlayerContentProps {
 
 const PlayerContent: React.FC<PlayerContentProps> = ({ song, songUrl, key }) => {
     const player = usePlayer()
-    const [volume, setVolume] = useState(1)
+    const [volume, setVolume] = useState(0.5)
     const [playing, setPlaying] = useState(false)
 
     
@@ -60,7 +60,7 @@ const PlayerContent: React.FC<PlayerContentProps> = ({ song, songUrl, key }) => 
        
         volume: volume,
         onplay: () => setPlaying(true),
-        onended: () => {
+        onend: () => {
             setPlaying(false)
             onPlayNext()
         },
@@ -103,7 +103,7 @@ const PlayerContent: React.FC<PlayerContentProps> = ({ song, songUrl, key }) => 
             {/* only visibale for mobail */}
             <div className="flex md:hidden col-auto w-full justify-end items-center">
                 <div
-                    onClick={() => { }}
+                    onClick={handlePlay}
                     className="h-10 w-10 flex items-center justify-center rounded-full bg-white p-1 cursor-pointer"
                 >
                     <Icon size={30}

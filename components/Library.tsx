@@ -6,6 +6,7 @@ import { useUser } from '@/hooks/useUser';
 import useUploadModel from '@/hooks/useUploadModel';
 import { Song } from '@/tpyes';
 import MediaItem from './MediaItem';
+import useOnPlay from '@/hooks/useOnPlay';
 
 interface Laibraryprops {
     songs:Song[]
@@ -16,7 +17,7 @@ const Library:React.FC<Laibraryprops> = ({songs}) => {
     const authModle = useAuthModel()
     const uploadModel = useUploadModel()
     const {user} = useUser()
-
+    const onPlay = useOnPlay(songs)
 
 
     const onClick = () => {
@@ -40,7 +41,7 @@ const Library:React.FC<Laibraryprops> = ({songs}) => {
             </div>
             <div className='flex flex-col gap-y-2 mt-4 px-3'>
                 {
-                    songs.map(item=><MediaItem key={item.id} onClick={()=>{}} data={item} />)
+                    songs.map(item=><MediaItem key={item.id} onClick={(id:string)=>onPlay(id)} data={item} />)
                 }
             </div>
         </div>
