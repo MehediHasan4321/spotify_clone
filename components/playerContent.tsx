@@ -23,7 +23,7 @@ const PlayerContent: React.FC<PlayerContentProps> = ({ song, songUrl, key }) => 
     const [volume, setVolume] = useState(1)
     const [playing, setPlaying] = useState(false)
 
-
+    
     const Icon = playing ? BsPauseFill : BsPlayFill
     const VolumeIcon = volume === 0 ? HiSpeakerXMark : HiSpeakerWave
 
@@ -55,8 +55,9 @@ const PlayerContent: React.FC<PlayerContentProps> = ({ song, songUrl, key }) => 
         }
         player.setId(previousSong)
     }
-
+    
     const [play, { pause, sound }] = useSound(songUrl, {
+       
         volume: volume,
         onplay: () => setPlaying(true),
         onended: () => {
@@ -71,7 +72,7 @@ const PlayerContent: React.FC<PlayerContentProps> = ({ song, songUrl, key }) => 
     useEffect(() => {
         sound?.play();
         return () => {
-            sound?.unload()
+            sound?.onload
         }
     }, [sound])
 

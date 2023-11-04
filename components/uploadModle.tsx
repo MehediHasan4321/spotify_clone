@@ -41,6 +41,8 @@ const UploadModel = () => {
             const songFile = values?.song?.[0]
             const uniqueID = uniqid()
 
+            console.log('image value',imageFile)
+
             if(!imageFile || !songFile || !user){
                 toast.error('Missing Error')
                 return
@@ -62,7 +64,8 @@ const UploadModel = () => {
 
             const {data:imageData,error:imageError} = await supabaseClient.storage.from('images').upload(`images-${values.title}-${uniqueID}`,imageFile,{
                 cacheControl:'3600',
-                upsert:false
+                upsert:false,
+                
             })
 
             if(imageError){
