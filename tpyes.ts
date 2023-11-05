@@ -30,20 +30,20 @@ export interface Products{
     metadata?:Stripe.Metadata
 }
 
-export interface Price{
-    id:string
-    product_id:string
-    active?:boolean
-    description?:string
-    unit_amount?:string
-    currency?:string
-    type?:string
-    interval?:string
-    intervar_count?:number
-    trial_priod_days?:number | null
-    metadata?:Stripe.Metadata
-    products:Products
-}
+export interface Price {
+    id: string;
+    product_id?: string;
+    active?: boolean;
+    description?: string;
+    unit_amount?: number;
+    currency?: string;
+    type?: Stripe.Price.Type;
+    interval?: Stripe.Price.Recurring.Interval;
+    interval_count?: number;
+    trial_period_days?: number | null;
+    metadata?: Stripe.Metadata;
+    products?: Products;
+  }
 
 
 export interface Subscription {
