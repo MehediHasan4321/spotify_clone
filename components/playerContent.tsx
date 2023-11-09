@@ -1,7 +1,7 @@
 'use client'
-
 import { Song } from "@/tpyes"
-import useSound from 'use-sound';
+//@ts-ignore
+import useSound from 'use-sound'
 import MediaItem from "./MediaItem"
 import LikeButton from "./likebutton"
 import { BsPauseFill, BsPlayFill } from 'react-icons/bs'
@@ -20,7 +20,7 @@ interface PlayerContentProps {
 
 const PlayerContent: React.FC<PlayerContentProps> = ({ song, songUrl, key }) => {
     const player = usePlayer()
-    const [volume, setVolume] = useState(0.5)
+    const [volume, setVolume] = useState(0.1)
     const [playing, setPlaying] = useState(false)
 
     
